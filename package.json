@@ -1,0 +1,9 @@
+{
+  "name": "creative-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Creative portfolio: content director, content creator and social media specialist",
+  "scripts": {
+    "dev": "npx --yes serve . -l 3000"
+  }
+}
