@@ -160,8 +160,8 @@ const SOCIALS = [
     url: "https://www.tiktok.com/@stdhn4",
     domain: "tiktok.com/@stdhn4",
     posts: 2,                 // number of screenshots in assets/socials/tiktok-1, -2 ...
-    followers: "",            // e.g. "10.5K"
-    topics: [],               // e.g. ["Short videos", "POV skits"]
+    followers: "6.7K",            // e.g. "10.5K"
+    topics: ["Fashion", "Creative", "Gym"],               // e.g. ["Short videos", "POV skits"]
     tint: "#bdebf5",
   },
   {
@@ -172,7 +172,7 @@ const SOCIALS = [
     stack: "text",            // cards with the same `stack` value share one column, top to bottom
     posts: 0,                 // no screenshots for this one
     followers: "11.4K",
-    topics: [],               // e.g. ["Threads", "Daily thoughts"]
+    topics: ["Fashion", "Daily Life", "Gym"],               // e.g. ["Threads", "Daily thoughts"]
     tint: "#c9c3f0",
   },
   {
@@ -183,7 +183,7 @@ const SOCIALS = [
     stack: "text",
     posts: 0,                 // no screenshots for this one (set 2 and add assets/socials/threads-1, -2 to show them)
     followers: "955",
-    topics: [],               // e.g. ["Tech", "Fashion"]
+    topics: ["Daily Life", "Gym"],               // e.g. ["Tech", "Fashion"]
     tint: "#ffe27a",
   },
 ];
