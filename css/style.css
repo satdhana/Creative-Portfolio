@@ -96,6 +96,30 @@ ul { padding: 0; list-style: none; }
 .topbar__nav a { text-decoration: none; font-weight: 700; font-size: .95rem; padding: .2rem .1rem; border-bottom: 3px solid transparent; }
 .topbar__nav a:hover { border-bottom-color: var(--ink); }
 
+/* Menu button (only shown on small screens) */
+.topbar__toggle { display: none; position: relative; width: 44px; height: 44px; padding: 0; background: var(--paper); border: 2px solid var(--ink); border-radius: 8px; box-shadow: 3px 3px 0 var(--ink); cursor: pointer; }
+.topbar__toggle span { position: absolute; left: 9px; right: 9px; height: 3px; background: var(--ink); border-radius: 2px; transition: transform .2s, opacity .2s, top .2s; }
+.topbar__toggle span:nth-child(1) { top: 12px; }
+.topbar__toggle span:nth-child(2) { top: 19px; }
+.topbar__toggle span:nth-child(3) { top: 26px; }
+.topbar.is-open .topbar__toggle span:nth-child(1) { top: 19px; transform: rotate(45deg); }
+.topbar.is-open .topbar__toggle span:nth-child(2) { opacity: 0; }
+.topbar.is-open .topbar__toggle span:nth-child(3) { top: 19px; transform: rotate(-45deg); }
+@media (max-width: 720px) {
+  .topbar__toggle { display: block; }
+  .topbar__nav {
+    display: none;
+    position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; gap: 0;
+    padding: .3rem clamp(1rem, 4vw, 3rem) .8rem;
+    background: var(--bar);
+    border-bottom: var(--border);
+  }
+  .topbar.is-open .topbar__nav { display: flex; }
+  .topbar__nav a { padding: .9rem .2rem; font-size: 1.05rem; border-bottom: 2px solid rgba(27, 27, 27, .25); }
+  .topbar__nav a:last-child { border-bottom: 0; }
+}
+
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
@@ -303,7 +327,6 @@ ul { padding: 0; list-style: none; }
   .sticker--sparkle1, .sticker--heart { display: none; }
 }
 @media (max-width: 520px) {
-  .topbar__nav { gap: .8rem; }
   .win__nav { display: none; }
 }
 

@@ -160,8 +160,8 @@ const SOCIALS = [
     url: "https://www.tiktok.com/@stdhn4",
     domain: "tiktok.com/@stdhn4",
     posts: 2,                 // number of screenshots in assets/socials/tiktok-1, -2 ...
-    followers: "6.7K",            // e.g. "10.5K"
-    topics: ["Fashion", "Creative", "Gym"],               // e.g. ["Short videos", "POV skits"]
+    followers: "",            // e.g. "10.5K"
+    topics: [],               // e.g. ["Short videos", "POV skits"]
     tint: "#bdebf5",
   },
   {
@@ -172,7 +172,7 @@ const SOCIALS = [
     stack: "text",            // cards with the same `stack` value share one column, top to bottom
     posts: 0,                 // no screenshots for this one
     followers: "11.4K",
-    topics: ["Fashion", "Daily Life", "Gym"],               // e.g. ["Threads", "Daily thoughts"]
+    topics: [],               // e.g. ["Threads", "Daily thoughts"]
     tint: "#c9c3f0",
   },
   {
@@ -183,7 +183,7 @@ const SOCIALS = [
     stack: "text",
     posts: 0,                 // no screenshots for this one (set 2 and add assets/socials/threads-1, -2 to show them)
     followers: "955",
-    topics: [ "Daily Life", "Gym"],               // e.g. ["Tech", "Fashion"]
+    topics: [],               // e.g. ["Tech", "Fashion"]
     tint: "#ffe27a",
   },
 ];
@@ -575,4 +575,21 @@ function loadPosts(social, container) {
     ["cloud", "#ffffff", 150, { bottom: "1rem", left: "3%" }, 0, 0.9, true],
     ["zigzag", "#00a06e", 120, { top: "1.5rem", right: "14%" }, 4, 1, true],
   ]);
+})();
+/* Mobile menu: the button shows and hides the navigation */
+(function mobileMenu() {
+  const bar = document.querySelector(".topbar");
+  const btn = document.getElementById("menuToggle");
+  const nav = document.getElementById("mainNav");
+  if (!bar || !btn || !nav) return;
+  const setOpen = (open) => {
+    bar.classList.toggle("is-open", open);
+    btn.setAttribute("aria-expanded", String(open));
+    btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  };
+  btn.addEventListener("click", () => setOpen(!bar.classList.contains("is-open")));
+  nav.addEventListener("click", (e) => { if (e.target.closest("a")) setOpen(false); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") setOpen(false); });
+  document.addEventListener("click", (e) => { if (!bar.contains(e.target)) setOpen(false); });
+  window.matchMedia("(min-width: 721px)").addEventListener("change", () => setOpen(false));
 })();
