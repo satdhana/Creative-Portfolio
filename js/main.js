@@ -172,7 +172,7 @@ const SOCIALS = [
     stack: "text",            // cards with the same `stack` value share one column, top to bottom
     posts: 0,                 // no screenshots for this one
     followers: "11.4K",
-    topics: ["Fashion", "Daily Life", "Gym"],               // e.g. ["Threads", "Daily thoughts"]
+    topics: ["Daily Life", "Gym"],               // e.g. ["Threads", "Daily thoughts"]
     tint: "#c9c3f0",
   },
   {
